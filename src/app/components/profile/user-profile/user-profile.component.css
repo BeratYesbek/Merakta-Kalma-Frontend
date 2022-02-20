@@ -1,0 +1,18 @@
+li{
+    float: left;
+    margin: 10px;
+}
+ul {
+    list-style-type: none;
+}
+.profile-box
+{
+    background-color: #fff;
+    border-radius: 10px;
+}
+.box{
+    margin-top: 15px;
+}
+.info-box{
+    margin-left: 20px;
+}

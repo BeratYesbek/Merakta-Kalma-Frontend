@@ -1,0 +1,61 @@
+
+.tag-box
+{
+    margin: 5px;
+    margin-left: 45px
+}
+.tag 
+{
+    margin-top: 5px;
+}
+
+.btn-menu{
+    float: right;
+    margin-bottom: -15px;
+    color: inherit;
+}
+.menu-icon
+{
+margin-left: 5px;
+}
+.card-box
+{
+    border-radius: 10px;
+    width: 100%;
+    margin-top: 16px
+    
+}
+
+.info-box
+{
+    margin-bottom: -25px;
+}
+.info-box p  {
+    padding: 3px;
+}
+
+.info
+{
+    color: inherit;
+}
+.info:hover   
+{
+    color: inherit;
+}
+.search{
+    size: 10px;
+    margin-top: 5px;
+}
+.date   
+{
+    float: right;
+    margin-bottom: -20px;
+}
+.date  i
+{
+    padding-bottom: 5px;
+
+}
+.date label {
+    padding-left: 5px;
+}

@@ -1,0 +1,53 @@
+/* Show it's not fixed to the top */
+body {
+    min-height: 75rem;
+  }
+.bg-dark
+  {
+background: #11101D;
+background-color: #11101D;
+  }
+.navbar-dark
+{
+    background: #11101D;
+    background-color: #11101D;
+
+}
+
+.custom-background
+{
+    background: #272930;
+    background-color: #272930;
+}
+.menu
+{
+    color: #fff;
+}
+.wrapper {
+    text-align: center;
+}
+.wrapper ul {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    /* For IE, the outcast */
+    zoom:1;
+    *display: inline;
+}
+.wrapper li {
+    padding: 2px 5px;
+}
+
+@media screen and (min-width: 620px) {
+    .wrapper li {
+        padding: 2px 5px;
+        float: left;
+    }
+    
+}
+a{
+    color: white;
+}
+a :hover{
+
+}

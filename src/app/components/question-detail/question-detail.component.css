@@ -1,0 +1,91 @@
+.item-like {
+    width: 50px;
+    height: 50px;
+}
+
+.item-dislike {
+    width: 50px;
+    height: 50px;
+}
+
+[nz-list-item] {
+    width: 100%;
+    border-bottom: 1px solid #e2e0e0;
+}
+
+.question-detail-box {
+    background-color: white;
+    border-radius: 10px;
+    border: #e2e0e0 solid 1px;
+}
+
+.padding-box {
+    padding: 15px;
+}
+
+.rating-text {
+    padding: 7px;
+}
+
+.count {
+    padding-left: 8px;
+    cursor: auto;
+}
+
+.ant-comment-rtl .count {
+    padding-right: 8px;
+    padding-left: 0;
+}
+
+.border-line {
+    width: 100%;
+    border-bottom: 1px solid #e2e0e0;
+}
+
+.custom-right-grid {
+    float: right;
+    margin: 5px
+}
+
+@media screen and (max-width: 620px) {
+    .rating-box {
+        float: right;
+    }
+    .user-info-box {
+        float: left;
+    }
+}
+
+@media screen and (min-width: 620px) {
+    .info-box {
+        padding-left: 15px;
+        padding-top: 15px;
+    }
+    .rating-box {
+        width: auto;
+        margin: 25%;
+    }
+}
+
+.display-none {
+    display: none;
+    position: relative;
+    animation-name: example;
+    animation-duration: 4s;
+    animation-delay: -2s;
+}
+
+.display-none-remove {
+    display: inline;
+}
+
+.btn-answer {
+    float: right;
+}
+
+.cancel_btn {
+    width: 30px;
+    height: 30px;
+    float: right;
+    margin-bottom: 5px;
+}

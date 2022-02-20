@@ -1,0 +1,23 @@
+@media screen and (max-width: 520px) {
+    .custom-box  {
+        width: 100%;
+    }
+    
+}
+@media screen and (max-width: 620px) {
+    .custom-grid
+    {
+        margin: 5px;
+        width: 100%;
+        padding: 10px;
+    }
+}
+@media screen and (min-width: 620px) {
+    .custom-grid
+    {
+        margin: auto;
+        width: 60%;
+        padding: 10px;
+    }
+}
+

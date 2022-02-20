@@ -1,0 +1,46 @@
+<div class="profile-box">
+    <div style="padding: 30px;">
+        <div class="row">
+            <div class="col-3">
+                <nz-avatar [nzShape]="'square'" [nzSize]="150" [nzIcon]="'user'"></nz-avatar>
+            </div>
+            <div class="col-9">
+                <div class="info-box">
+                    <div>
+                        <h4>Ertan Yeşbek</h4>
+                    </div>
+                    <div>
+                        <p>Istanbul, Turkey</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="row box">
+            <div class="col-3">
+                <nz-statistic [nzValue]="(1949101 | number)!" [nzTitle]="'Conributing'"></nz-statistic>
+
+            </div>
+            <div class="col-3">
+                <nz-statistic [nzValue]="(1949101 | number)!" [nzTitle]="'Blogs'"></nz-statistic>
+            </div>
+        </div>
+        <nz-tabset>
+            <nz-tab nzTitle="Biography">
+                <app-your-biography></app-your-biography>
+            </nz-tab>
+
+            <nz-tab nzTitle="Article">
+
+                <app-your-blogs></app-your-blogs>
+            </nz-tab>
+
+            <nz-tab nzTitle="Answers">
+                <app-your-answer></app-your-answer>
+            </nz-tab>
+        </nz-tabset>
+
+    </div>
+</div>

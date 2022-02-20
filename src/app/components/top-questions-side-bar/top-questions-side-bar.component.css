@@ -1,0 +1,19 @@
+.top-question-item
+{
+    width: 300px;
+}
+.date
+{
+    size: 10px;
+}
+.top-question-box
+{
+    background-color: white;
+}
+
+.btn-ask-question{
+    width: 100%;
+    margin-bottom: 10px;
+    margin-top: 15px;
+
+}

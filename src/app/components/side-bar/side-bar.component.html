@@ -1,0 +1,46 @@
+<div #sidebar class="sidebar">
+   <div class="logo-details">
+      <i class='bx bxl-c-plus-plus icon'></i>
+      <div class="logo_name">Merakta Kalma</div>
+      <i #closebtn class='bx bx-menu' (click)="closeBtn(sidebar,closebtn)" id="btn"></i>
+   </div>
+   <ul class="nav-list">
+      <li>
+         <i class='bx bx-search'></i>
+         <input type="text" placeholder="Search...">
+         <span class="tooltip">Search</span>
+      </li>
+      <li>
+         <a href="#">
+            <i class='bx bx-grid-alt'></i>
+            <span class="links_name">Dashboard</span>
+         </a>
+         <span class="tooltip">Dashboard</span>
+      </li>
+      <li>
+         <a href="#">
+            <i class='bx bx-question-mark'></i>
+            <span class="links_name">Questions</span>
+         </a>
+         <span class="tooltip">Questions</span>
+      </li>
+      <li>
+         <a href="#">
+            <i class='bx bx-user'></i>
+            <span class="links_name">User</span>
+         </a>
+         <span class="tooltip">User</span>
+      </li>
+
+      <li class="profile">
+         <div class="profile-details">
+            <!--<img src="profile.jpg" alt="profileImg">-->
+            <div class="name_job">
+               <div class="name">Prem Shahi</div>
+               <div class="job">Web designer</div>
+            </div>
+         </div>
+         <i class='bx bx-log-out' id="log_out"></i>
+      </li>
+   </ul>
+</div>
