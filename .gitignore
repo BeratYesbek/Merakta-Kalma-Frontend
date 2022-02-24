@@ -42,4 +42,8 @@ testem.log
 Thumbs.db
 *.html linguist-detectable=false
 *.html linguist-detectable=false
+<<<<<<< HEAD
 .html linguist-detectable=false
+=======
+.html linguist-detectable=false
+>>>>>>> ae562bae96fe09c66b31d1590dff21c6e62c46cc
