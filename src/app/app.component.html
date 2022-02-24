@@ -5,7 +5,7 @@
     <nz-page-header class="Sorular" nzBackIcon nzTitle="Sorular" nzSubtitle="En son sorulmuş sorular"></nz-page-header>
     <div class="row">
         <div class="col-lg-8 custom-box">
-            <app-question-detail></app-question-detail>
+            <router-outlet></router-outlet>
         </div>
         <div class="col-lg-4 custom-box">
             <app-top-questions-side-bar></app-top-questions-side-bar>
@@ -13,7 +13,3 @@
         </div>
     </div>
 </div>
-
-
-
-<router-outlet></router-outlet>

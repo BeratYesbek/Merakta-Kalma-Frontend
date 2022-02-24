@@ -1,0 +1,81 @@
+<div class="question-detail-box">
+    <div class="question-add-box">
+        <form [formGroup]="questionForm" nz-form>
+            <nz-form-item>
+                <nz-form-label [nzSpan]="3">Başlık</nz-form-label>
+                <nz-form-control>
+                    <input formControlName="title" nz-input />
+                </nz-form-control>
+            </nz-form-item>
+
+            <nz-form-item>
+                <nz-form-label [nzSpan]="3">Açıklama</nz-form-label>
+                <nz-form-control>
+                    <textarea rows="4" nz-input formControlName="description"></textarea>
+                </nz-form-control>
+            </nz-form-item>
+
+            <nz-form-item>
+                <nz-form-label [nzSpan]="3">Tag</nz-form-label>
+                <nz-form-control>
+                    <input type="text" [ngModelOptions]="{standalone: true}" [(ngModel)]="myModel" (ngModelChange)="onSearchChange($event)" nz-input name="errorValid" />
+                    <p>Lütfen her bir anahtar kelimeden sonra araya virgul koyunuz, bu şekilde tag oluşturabilirsiniz
+                    </p>
+                    <p>Örnek => Vitamin,</p>
+                </nz-form-control>
+            </nz-form-item>
+
+            <div class="custom-nz-tag">
+                <ul>
+                    <ng-template *ngIf="tags.length > 0">
+                        <h6>Tagleriniz: </h6>
+                    </ng-template>
+                    <li *ngFor="let tag of tags">
+                        <nz-tag nzMode="closeable" (nzOnClose)="onClose(tag)">{{tag}}</nz-tag>
+                    </li>
+                </ul>
+            </div>
+            <br>
+
+            <button class="file-btn" nz-button>
+                <label for="formFile">
+                    <i nz-icon nzType="upload"></i>
+                    Dosya Yükleyin
+                </label>
+            </button>
+            <input (change)="onFileChange($event)" multiple class="form-control formfile" type="file" id="formFile">
+
+            <div class="file">
+                <nz-form-item>
+                    <nz-form-label [nzSpan]="3">Dosyalar</nz-form-label>
+                    <nz-form-control>
+                        <ul>
+                            <li *ngFor="let file of files">
+                                <div class="row">
+                                    <div class="col-md-10">
+                                        <p>{{file.name}}</p>
+
+                                    </div>
+                                    <div class="col-md-2">
+                                        <button (click)="deleteFile(file)" class="file-delete" nz-button nzType="dashed" nzShape="circle"><i nz-icon nzType="delete" nzTheme="outline"></i></button>
+
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </nz-form-control>
+                </nz-form-item>
+            </div>
+
+            <button (click)="onSubmit()" class="btn-send" nz-button nzType="dashed">
+                <i nz-icon nzType="send" nzTheme="outline"></i>
+                Paylaş
+            </button>
+
+        </form>
+    </div>
+
+</div>
+<ng-template #suffixIconSearch>
+    <i nz-icon nzType="search"></i>
+</ng-template>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-questions',
@@ -8,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 export class QuestionsComponent implements OnInit {
   loading = false;
 
-  constructor() { }
+  constructor(private router :Router) { }
 
   ngOnInit(): void {
+  }
+
+  showDetail(): void{
+    this.router.navigate(['/questions/1']);
   }
 
 }

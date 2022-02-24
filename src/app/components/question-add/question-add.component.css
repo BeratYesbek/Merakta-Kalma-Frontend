@@ -1,0 +1,77 @@
+.question-detail-box {
+    background-color: white;
+    border-radius: 10px;
+    border: #e2e0e0 solid 1px;
+    margin-top: 15px;
+}
+
+.question-add-box {
+    padding: 30px;
+}
+
+[nz-form] {
+    width: 100%;
+}
+
+.formfile {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+#formFile {
+    cursor: pointer;
+}
+
+.file-btn {
+    float: right;
+    margin: 5px;
+}
+
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+.editable-tag {
+    background: rgb(255, 255, 255);
+    border-style: dashed;
+}
+
+nz-date-picker ::ng-deep .ant-calendar-picker {
+    width: 100%;
+}
+
+nz-date-picker,
+nz-time-picker {
+    width: 100%;
+}
+
+.custom-nz-tag li {
+    float: left;
+}
+
+.file li {
+    border-bottom: 0.3px dashed rgb(83, 83, 83);
+}
+
+ul {
+    list-style-type: none;
+}
+
+.file-delete {
+    margin: 4px;
+    width: 30px;
+    height: 30px;
+}
+
+.custom-nz-tag {
+    margin-top: -25px;
+}
+
+.btn-send {
+    margin-top: 20px;
+    margin-left: 55px;
+}

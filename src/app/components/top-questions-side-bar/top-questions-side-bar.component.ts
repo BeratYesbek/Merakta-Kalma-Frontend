@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-top-questions-side-bar',
@@ -21,9 +22,13 @@ export class TopQuestionsSideBarComponent implements OnInit {
       title: 'Ant Design Title 4'
     }
   ];
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  askQuestion(): void {
+    this.router.navigate(['/question/create']);
   }
 
 }

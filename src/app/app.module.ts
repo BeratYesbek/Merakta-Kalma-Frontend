@@ -75,7 +75,7 @@ import { NzTreeSelectModule } from 'ng-zorro-antd/tree-select';
 import { NzUploadModule } from 'ng-zorro-antd/upload';
 import { NzResizableModule } from 'ng-zorro-antd/resizable';
 import { NzPipesModule } from 'ng-zorro-antd/pipes';
-import { FormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { TopNavbarComponent } from './components/top-navbar/top-navbar.component';
@@ -85,6 +85,9 @@ import { YourAnswerComponent } from './components/profile/your-answer/your-answe
 import { YourBlogsComponent } from './components/profile/your-blogs/your-blogs.component';
 import { YourBiographyComponent } from './components/profile/your-biography/your-biography.component';
 import { QuestionDetailComponent } from './components/question-detail/question-detail.component';
+import { QuestionAddComponent } from './components/question-add/question-add.component';
+import { MarkdownModule } from 'ngx-markdown';
+import {  ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -99,13 +102,13 @@ import { QuestionDetailComponent } from './components/question-detail/question-d
     YourAnswerComponent,
     YourBlogsComponent,
     YourBiographyComponent,
-    QuestionDetailComponent
+    QuestionDetailComponent,
+    QuestionAddComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    NgbModule,
     NzButtonModule,
     NzMenuModule,
     NzTypographyModule,
@@ -178,9 +181,13 @@ import { QuestionDetailComponent } from './components/question-detail/question-d
     NzResizableModule,
     NzPipesModule,
     NzAvatarModule,
-    FormsModule,
     HttpClientModule,
-  ],
+    MarkdownModule.forRoot(),
+    NgbModule,
+    FormsModule,
+
+    ReactiveFormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
