@@ -73,8 +73,8 @@ export class QuestionAddComponent implements OnInit {
     })
 
     this.questionService.add(form).subscribe(response => {
-      if (response.sucess) {
-        
+      if (response.success) {
+        // do something later
       }
       else {
 

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Route, Router } from '@angular/router';
+import {  Route, Router } from '@angular/router';
+import { QuestionReadDto } from 'src/app/models/dtos/question-read-dto';
+import { QuestionService } from 'src/app/services/questionService/question.service';
 
 @Component({
   selector: 'app-questions',
@@ -8,13 +10,30 @@ import { Route, Router } from '@angular/router';
 })
 export class QuestionsComponent implements OnInit {
   loading = false;
+  questionReadDto: QuestionReadDto[] = [];
+  page: number = 0;
+  pageSize = 5;
 
-  constructor(private router :Router) { }
+  constructor(
+    private router: Router,
+    private questionService: QuestionService
+    ) { }
 
   ngOnInit(): void {
+    this.getQuestions();
   }
 
-  showDetail(): void{
+  getQuestions(): void {
+    this.questionService.getAll().subscribe(response => {
+      if(response.success){
+        this.questionReadDto = response.data;
+        console.log(this.questionReadDto);
+      }
+
+    })
+  }
+
+  showDetail(): void {
     this.router.navigate(['/questions/1']);
   }
 

@@ -1,61 +1,62 @@
-
-.tag-box
-{
+.tag-box {
     margin: 5px;
     margin-left: 45px
 }
-.tag 
-{
+
+.tag {
     margin-top: 5px;
 }
 
-.btn-menu{
+.btn-menu {
     float: right;
     margin-bottom: -15px;
     color: inherit;
 }
-.menu-icon
-{
-margin-left: 5px;
+
+.menu-icon {
+    margin-left: 5px;
 }
-.card-box
-{
+
+.card-box {
     border-radius: 10px;
     width: 100%;
     margin-top: 16px
-    
 }
 
-.info-box
-{
+.info-box {
     margin-bottom: -25px;
 }
-.info-box p  {
+
+.info-box p {
     padding: 3px;
 }
 
-.info
-{
+.info {
     color: inherit;
 }
-.info:hover   
-{
+
+.info:hover {
     color: inherit;
 }
-.search{
+
+.search {
     size: 10px;
     margin-top: 5px;
 }
-.date   
-{
+
+.date {
     float: right;
     margin-bottom: -20px;
 }
-.date  i
-{
-    padding-bottom: 5px;
 
+.date i {
+    padding-bottom: 5px;
 }
+
 .date label {
     padding-left: 5px;
+}
+
+.pagination {
+    margin: 10px;
 }
