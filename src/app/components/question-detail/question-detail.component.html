@@ -4,7 +4,7 @@
             <div class="info-box">
                 <div class="user-info-box">
                     <nz-avatar [nzSize]="70" nzIcon="user"></nz-avatar>
-                    <p> Berat Yesbek</p>
+                    <p> {{questionReadDto?.user?.firstName}} {{questionReadDto?.user?.lastName}}</p>
 
                 </div>
 
@@ -14,7 +14,7 @@
                             nzTheme="outline"></i></button>
 
                     <br>
-                    <h6 class="rating-text  ">65</h6>
+                    <h6 class="rating-text  ">{{questionReadDto?.rating?.length}}</h6>
 
                     <button nz-button nzType="dashed" nzShape="circle"><i nz-icon nzType="down"
                             nzTheme="outline"></i></button>
@@ -36,70 +36,51 @@
                     <li nz-menu-item nzDanger>4th danger item</li>
                 </ul>
             </nz-dropdown-menu>
-            <h4>Lorem ipsum dolor sit amet.</h4>
+            <h4>{{questionReadDto?.title}}</h4>
             <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores fugit sequi animi voluptate enim expedita consequuntur deserunt a temporibus ex laboriosam recusandae saepe aliquid, tempora unde iste sit nihil natus. Lorem ipsum dolor sit, amet consectetur
-                adipisicing elit. Velit laboriosam ex officiis sint doloribus nulla voluptatum non! Facilis eius laboriosam impedit expedita, rerum nulla voluptatum quisquam ut esse sed incidunt. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Eligendi quisquam debitis iusto expedita veritatis, provident labore repellendus error nobis sit porro dolorum placeat quis reiciendis laborum a aliquid quae dicta? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam quam nihil
-                voluptates explicabo voluptas voluptate in, repellat provident tempore harum, eligendi libero quas incidunt, ipsam magni. Accusamus necessitatibus ratione suscipit!
+                {{questionReadDto?.description}}
             </p>
 
             <nz-list nzItemLayout="vertical">
 
-                <nz-list-item>
-                    <nz-comment nzAuthor="Han Solo" [nzDatetime]="time">
+                <nz-list-item *ngFor="let comment of questionCommentReadDto">
+                    <nz-comment nzAuthor="{{comment.user.firstName}} {{comment.user.lastName}}" [nzDatetime]="time">
                         <nz-avatar nz-comment-avatar nzIcon="user" nzSrc="//zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"></nz-avatar>
                         <nz-comment-content>
                             <p>
-                                We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.
+                                {{comment.comment?.description}}
                             </p>
                         </nz-comment-content>
                         <nz-comment-action>
                             <i nz-tooltip nzTitle="Like" nz-icon nzType="like" [nzTheme]="likes > 0 ? 'twotone' : 'outline'" (click)="like()"></i>
-                            <span class="count like">{{ likes }}</span>
+                            <span class="count like">{{ comment.dislikeCount }}</span>
                         </nz-comment-action>
                         <nz-comment-action>
                             <i nz-tooltip nzTitle="Dislike" nz-icon nzType="dislike" [nzTheme]="dislikes > 0 ? 'twotone' : 'outline'" (click)="dislike()"></i>
-                            <span class="count dislike">{{ dislikes }}</span>
+                            <span class="count dislike">{{ comment.likeCount }}</span>
                         </nz-comment-action>
                     </nz-comment>
 
                 </nz-list-item>
-                <nz-list-item>
-                    <nz-comment nzAuthor="Han Solo" [nzDatetime]="time">
-                        <nz-avatar nz-comment-avatar nzIcon="user" nzSrc="//zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"></nz-avatar>
-                        <nz-comment-content>
-                            <p>
-                                We supply a series of design principles, practical patterns and high quality design resources (Sketch and Axure), to help people create their product prototypes beautifully and efficiently.
-                            </p>
-                        </nz-comment-content>
-                        <nz-comment-action>
-                            <i nz-tooltip nzTitle="Like" nz-icon nzType="like" [nzTheme]="likes > 0 ? 'twotone' : 'outline'" (click)="like()"></i>
-                            <span class="count like">{{ likes }}</span>
-                        </nz-comment-action>
-                        <nz-comment-action>
-                            <i nz-tooltip nzTitle="Dislike" nz-icon nzType="dislike" [nzTheme]="dislikes > 0 ? 'twotone' : 'outline'" (click)="dislike()"></i>
-                            <span class="count dislike">{{ dislikes }}</span>
-                        </nz-comment-action>
-                    </nz-comment>
 
-                </nz-list-item>
+
             </nz-list>
             <div #form class="display-none">
-                <form>
+                <form [formGroup]="commentFormGroup">
 
                     <button class="cancel_btn" nz-button nzType="dashed" (click)="cancelBtn(form,btn_div)" nzShape="circle"><i nz-icon nzType="close" nzTheme="outline"></i></button>
 
                     <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label">What are you thinking on this
                             ?</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <textarea formControlName="description" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                     </div>
+                    <button nz-button nzType="default" (click)="addComment()">
+                        <i nz-icon nzType="send" nzTheme="outline"></i>
+                        Send
+                    </button>
                 </form>
-                <button nz-button nzType="default">
-                    <i nz-icon nzType="send" nzTheme="outline"></i>
-                    Send
-                </button>
+
             </div>
             <div #btn_div>
                 <button class="btn-answer" nz-button nzType="default" (click)="answerBtn(form,btn_div)">

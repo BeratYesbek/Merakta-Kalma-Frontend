@@ -1,7 +1,8 @@
 import { QuestionComment } from "../question-comment";
-import { QuestionRating } from "../Question-rating";
+import { QuestionRating } from "../question-rating";
 import { QuestionTag } from "../question-tag";
 import { Tag } from "../Tag";
+import { User } from "../user";
 
 export interface QuestionReadDto {
 
@@ -9,9 +10,10 @@ export interface QuestionReadDto {
     title: string;
     description: string;
     userId: number;
+    user: User
     tags: Tag[];
     questionComments: QuestionComment[];
-    questionRatings: QuestionRating[];
+    rating: QuestionRating[];
     questionTags: QuestionTag[];
     
     

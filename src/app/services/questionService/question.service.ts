@@ -23,6 +23,9 @@ export class QuestionService {
     return this.httpClient.get<ListResponseModel<QuestionReadDto>>(`${API_URL_QUESTION}/getAllQuestionsDetail`);
   }
 
+  getDetailById(id : number) : Observable<SingleResponseModel<QuestionReadDto>> {
+    return this.httpClient.get<SingleResponseModel<QuestionReadDto>>(`${API_URL_QUESTION}/getQuestionDetailByQuestionId/${id}`);
+  }
 
 
 

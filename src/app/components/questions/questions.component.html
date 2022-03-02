@@ -1,59 +1,63 @@
-<nz-card *ngFor="let question of questionReadDto | slice: (page-1) * pageSize : page * pageSize" class="card-box" [nzActions]="[actionSetting, actionEllipsis]">
-    <a class="btn-menu" nz-dropdown [nzDropdownMenu]="menu"><i nz-icon nzType="ellipsis" nzTheme="outline"></i></a>
-    <nz-dropdown-menu #menu="nzDropdownMenu">
-        <ul nz-menu>
-            <li nz-menu-item>
-                <i class="menu-icon" nz-icon nzType="audit" nzTheme="outline">Şikayet et</i>
-            </li>
-        </ul>
-    </nz-dropdown-menu>
-    <nz-skeleton [nzActive]="true" [nzLoading]="loading" [nzAvatar]="{ size: 'large' }">
-        <nz-card-meta [nzAvatar]="avatarTemplate" nzTitle={{question.description}} nzDescription={{question.description}}>
-        </nz-card-meta>
-        <div class="tag-box">
-            <nz-tag *ngFor="let tag of question.tags" class="tag" [nzColor]="'green'">{{tag.name}}</nz-tag>
-            <nz-tag class="tag" [nzColor]="'cyan'">cyan</nz-tag>
-            <nz-tag class="tag" [nzColor]="'blue'">blue</nz-tag>
-            <nz-tag class="tag" [nzColor]="'geekblue'">geekblue</nz-tag>
-            <nz-tag class="tag" [nzColor]="'purple'">purple</nz-tag>
-            <nz-tag class="tag" [nzColor]="'magenta'">magenta</nz-tag>
+<div *ngFor="let question of questionReadDto | slice: (page-1) * pageSize : page * pageSize">
+    <nz-card class="card-box" [nzActions]="[actionSetting, actionEllipsis]">
+        <a class="btn-menu" nz-dropdown [nzDropdownMenu]="menu"><i nz-icon nzType="ellipsis" nzTheme="outline"></i></a>
+        <nz-dropdown-menu #menu="nzDropdownMenu">
+            <ul nz-menu>
+                <li nz-menu-item>
+                    <i class="menu-icon" nz-icon nzType="audit" nzTheme="outline">Şikayet et</i>
+                </li>
+            </ul>
+        </nz-dropdown-menu>
+        <nz-skeleton [nzActive]="true" [nzLoading]="loading" [nzAvatar]="{ size: 'large' }">
+            <nz-card-meta [nzAvatar]="avatarTemplate" nzTitle={{question.description}} nzDescription={{question.description}}>
+            </nz-card-meta>
+            <div class="tag-box">
+                <nz-tag *ngFor="let tag of question.tags" class="tag" [nzColor]="'green'">{{tag.name}}</nz-tag>
+                <nz-tag class="tag" [nzColor]="'cyan'">cyan</nz-tag>
+                <nz-tag class="tag" [nzColor]="'blue'">blue</nz-tag>
+                <nz-tag class="tag" [nzColor]="'geekblue'">geekblue</nz-tag>
+                <nz-tag class="tag" [nzColor]="'purple'">purple</nz-tag>
+                <nz-tag class="tag" [nzColor]="'magenta'">magenta</nz-tag>
+            </div>
+            <div class="date">
+                <i nz-icon nzType="field-time" nzTheme="outline"></i>
+                <label>25-12-2022</label>
+
+            </div>
+
+        </nz-skeleton>
+    </nz-card>
+    <ng-template #avatarTemplate>
+        <nz-avatar nzSrc="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"></nz-avatar>
+    </ng-template>
+    <ng-template #actionSetting>
+        <div class="row">
+            <div class="col-4 info-box">
+                <i class="info" nz-icon nzType="comment">
+                </i>
+                <p>145654</p>
+
+            </div>
+            <div class="col-4 info-box">
+                <i class="info" nz-icon nzType="group"></i>
+                <p>152</p>
+            </div>
+            <div class="col-4 info-box">
+                <i class="info" nz-icon nzType="eye">
+                </i>
+                <p>564</p>
+            </div>
         </div>
-        <div class="date">
-            <i nz-icon nzType="field-time" nzTheme="outline"></i>
-            <label>25-12-2022</label>
 
-        </div>
+    </ng-template>
+    <ng-template #actionEllipsis>
+        <i (click)="showDetail(question.id)" class="search" nz-icon nzType="search" nzTheme="outline">
+            Soruyu İncele
 
-    </nz-skeleton>
-</nz-card>
-<ng-template #avatarTemplate>
-    <nz-avatar nzSrc="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"></nz-avatar>
-</ng-template>
-<ng-template #actionSetting>
-    <div class="row">
-        <div class="col-4 info-box">
-            <i class="info" nz-icon nzType="comment">
-            </i>
-            <p>145654</p>
+        </i>
+    </ng-template>
 
-        </div>
-        <div class="col-4 info-box">
-            <i class="info" nz-icon nzType="group"></i>
-            <p>152</p>
-        </div>
-        <div class="col-4 info-box">
-            <i class="info" nz-icon nzType="eye">
-            </i>
-            <p>564</p>
-        </div>
-    </div>
 
-</ng-template>
-<ng-template #actionEllipsis>
-    <i (click)="showDetail()" class="search" nz-icon nzType="search" nzTheme="outline">
-        Soruyu İncele
-
-    </i>
-</ng-template>
-
-<ngb-pagination class="pagination" [(page)]="page" [pageSize]="pageSize" [collectionSize]="questionReadDto.length"></ngb-pagination>
+</div>
+<ngb-pagination class="pagination" [(page)]="page" [pageSize]="pageSize" [collectionSize]="questionReadDto.length">
+</ngb-pagination>

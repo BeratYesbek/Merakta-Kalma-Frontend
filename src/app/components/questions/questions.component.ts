@@ -33,8 +33,8 @@ export class QuestionsComponent implements OnInit {
     })
   }
 
-  showDetail(): void {
-    this.router.navigate(['/questions/1']);
+  showDetail(id:number): void {
+    this.router.navigate([`/questions/${id}`]);	
   }
 
 }
