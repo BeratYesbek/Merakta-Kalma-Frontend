@@ -1,0 +1,24 @@
+.sign-up-and-in button {
+    margin: 10px;
+}
+
+a {
+    color: white;
+}
+
+.image {
+    width: 60px;
+    height: 60%;
+    border-radius: 50%;
+    border: 1px solid #fff;
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.user-profile-dropdown {
+    max-width: 150px;
+}

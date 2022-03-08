@@ -1,0 +1,31 @@
+<div class="row">
+    <div [hidden]="isNotUserExists" class="row user-profile-dropdown">
+        <div class="col-md-4 image">
+            <img src="https://images.pexels.com/photos/1704488/pexels-photo-1704488.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+
+        </div>
+        <div class="col-md-8">
+            <a nz-dropdown [nzDropdownMenu]="menu">
+                Hover me
+                <i nz-icon nzType="down"></i>
+            </a>
+        </div>
+    </div>
+
+
+    <nz-dropdown-menu #menu="nzDropdownMenu">
+
+        <ul nz-menu nzSelectable>
+            <li nz-menu-item>Profil</li>
+            <li nz-menu-item>Ayarlar</li>
+            <li nz-menu-item nzDanger>Çıkış</li>
+        </ul>
+    </nz-dropdown-menu>
+
+    <div class="sign-up-and-in">
+        <app-login></app-login>
+        <app-register></app-register>
+
+
+    </div>
+</div>

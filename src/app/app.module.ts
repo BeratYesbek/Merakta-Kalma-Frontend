@@ -88,6 +88,9 @@ import { QuestionDetailComponent } from './components/question-detail/question-d
 import { QuestionAddComponent } from './components/question-add/question-add.component';
 import { MarkdownModule } from 'ngx-markdown';
 import {  ReactiveFormsModule } from '@angular/forms';
+import { NavUserProfileComponent } from './components/nav-user-profile/nav-user-profile.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -103,7 +106,10 @@ import {  ReactiveFormsModule } from '@angular/forms';
     YourBlogsComponent,
     YourBiographyComponent,
     QuestionDetailComponent,
-    QuestionAddComponent
+    QuestionAddComponent,
+    NavUserProfileComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

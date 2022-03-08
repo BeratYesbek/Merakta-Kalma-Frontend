@@ -9,8 +9,8 @@
         </button>
 
 
-        <div class="collapse navbar-collapse wrapper" [ngClass]="{ 'show': navbarOpen }">
-            <ul class="navbar-nav mr-auto">
+        <div style="float:right" class="collapse navbar-collapse wrapper right" [ngClass]="{ 'show': navbarOpen }">
+            <ul class="navbar-nav ">
                 <li class="nav-item">
                     <a class="nav-link" href="#">Item 1</a>
                 </li>
@@ -19,6 +19,10 @@
                     <a class="nav-link" href="#">Item 2</a>
                 </li>
             </ul>
+        </div>
+
+        <div>
+            <app-nav-user-profile></app-nav-user-profile>
         </div>
     </div>
 
