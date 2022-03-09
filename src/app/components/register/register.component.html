@@ -2,33 +2,33 @@
 
 <nz-modal nzCancelText="iptal" nzOkText="Kayıt ol" [(nzVisible)]="isVisible" nzTitle=" Kayıt ol" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
     <div *nzModalContent>
-        <form>
+        <form [formGroup]="formGroup">
 
             <div class="form-group">
-                <label for="exampleInputEmail1">Kullanıcı Adı</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                <label for="username">Kullanıcı Adı</label>
+                <input formControlName="username" type="text" class="form-control" id="username" placeholder="Kullanıcı Adı">
             </div>
             <div class="form-group">
-                <label for="exampleInputEmail1">Ad</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                <label for="name">Ad</label>
+                <input formControlName="firstName" type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Ad">
             </div>
 
             <div class="form-group">
-                <label for="exampleInputEmail1">Soyad</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                <label for="lastname">Soyad</label>
+                <input formControlName="lastName" type="text" class="form-control" id="lastname" aria-describedby="emailHelp" placeholder="Soyad">
             </div>
             <div class="form-group">
-                <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                <label for="email">Email address</label>
+                <input formControlName="email" type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="E-posta">
+                <small id="emailHelp" class="form-text text-muted">E-posta adresinizi kimseyle paylaşmayacağız</small>
             </div>
             <div class="form-group">
-                <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                <label for="password">Password</label>
+                <input formControlName="password" type="password" class="form-control" id="password" placeholder="Password">
             </div>
             <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                <input formControlName="check" type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Okudum onaylıyorum.</label>
             </div>
         </form>
 

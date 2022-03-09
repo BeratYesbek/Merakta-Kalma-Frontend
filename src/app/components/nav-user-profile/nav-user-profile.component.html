@@ -6,7 +6,7 @@
         </div>
         <div class="col-md-8">
             <a nz-dropdown [nzDropdownMenu]="menu">
-                Hover me
+                {{userName}}
                 <i nz-icon nzType="down"></i>
             </a>
         </div>
@@ -22,7 +22,7 @@
         </ul>
     </nz-dropdown-menu>
 
-    <div class="sign-up-and-in">
+    <div [hidden]="isNotLoggedIn" class="sign-up-and-in">
         <app-login></app-login>
         <app-register></app-register>
 
